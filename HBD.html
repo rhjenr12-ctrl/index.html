@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 18th Birthday Ashley 💜</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:Poppins,sans-serif;
+height:100vh;
+overflow:hidden;
+background:radial-gradient(circle at top,#2a003f,#120018);
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+}
+
+/* glow background */
+.glow{
+position:absolute;
+width:500px;
+height:500px;
+background:radial-gradient(circle,rgba(170,0,255,0.25),transparent 70%);
+filter:blur(80px);
+animation:float 6s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-40px)}
+}
+
+/* screens */
+.screen{
+display:none;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+z-index:2;
+padding:20px;
+}
+
+.active{display:flex}
+
+/* title */
+h1{
+font-family:'Dancing Script',cursive;
+font-size:3rem;
+color:#d6a3ff;
+text-shadow:0 0 25px #a64dff;
+animation:fade 2s ease;
+}
+
+@keyframes fade{
+from{opacity:0;transform:scale(0.8)}
+to{opacity:1;transform:scale(1)}
+}
+
+/* button */
+button{
+margin-top:20px;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,#a64dff,#6a00cc);
+color:white;
+cursor:pointer;
+font-weight:600;
+box-shadow:0 10px 25px rgba(160,0,255,0.4);
+transition:0.3s;
+}
+
+button:hover{transform:scale(1.05)}
+
+/* ENVELOPE */
+.envelope{
+width:340px;
+height:210px;
+position:relative;
+cursor:pointer;
+animation:floatEnvelope 3s ease-in-out infinite;
+}
+
+@keyframes floatEnvelope{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+}
+
+/* base */
+.envelope .base{
+width:100%;
+height:100%;
+background:linear-gradient(145deg,#7a2cff,#4b0082);
+border-radius:12px;
+position:absolute;
+box-shadow:0 25px 60px rgba(0,0,0,0.4);
+}
+
+/* flap */
+.envelope .flap{
+position:absolute;
+width:100%;
+height:100%;
+clip-path:polygon(0 0,100% 0,50% 55%);
+background:linear-gradient(145deg,#b266ff,#6a00cc);
+transform-origin:top;
+transition:1s;
+}
+
+.envelope.open .flap{
+transform:rotateX(180deg);
+}
+
+/* label */
+.label{
+position:absolute;
+top:40%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+color:#6a00cc;
+padding:8px 18px;
+border-radius:20px;
+font-family:'Dancing Script',cursive;
+font-size:1.3rem;
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* LETTER */
+.letter{
+background:white;
+color:#4b006e;
+max-width:750px;
+max-height:80vh;
+overflow-y:auto;
+padding:40px;
+border-radius:20px;
+box-shadow:0 0 50px rgba(160,0,255,0.5);
+animation:rise 1.2s ease;
+text-align:left;
+}
+
+@keyframes rise{
+from{opacity:0;transform:translateY(50px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+.letter p{
+margin-bottom:18px;
+line-height:1.7;
+}
+
+/* spark glow */
+.glow2{
+position:absolute;
+width:300px;
+height:300px;
+background:radial-gradient(circle,rgba(200,100,255,0.3),transparent 70%);
+filter:blur(60px);
+top:10%;
+left:20%;
+animation:float 5s infinite;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="glow"></div>
+<div class="glow2"></div>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/10/25/audio_c3d5c2d9b6.mp3?filename=soft-emotional-piano-121526.mp3">
+</audio>
+
+<!-- OPENING -->
+<div class="screen active" id="opening">
+<h1>Happy 18th Birthday Ashley 💜</h1>
+<button onclick="start()">Open Your Letter 💌</button>
+</div>
+
+<!-- ENVELOPE -->
+<div class="screen" id="envelopeScreen">
+
+<div class="envelope" id="envelope" onclick="openLetter()">
+<div class="base"></div>
+<div class="flap"></div>
+<div class="label">To Ashley 💜</div>
+</div>
+
+<p style="margin-top:20px;color:#d6a3ff;">Tap the envelope ✨</p>
+
+</div>
+
+<!-- LETTER -->
+<div class="screen" id="letterScreen">
+
+<div class="letter">
+
+<p><b>My Dearest Ashley,</b></p>
+
+<p>As I sit to write this letter on your 18th birthday, my heart swells with a whirlwind of emotions, pride, joy, nostalgia, and yes, a touch of sadness that I won't be there to share this monumental day with you in person. Happy 18th Birthday, Ash! This isn't just any birthday. It's the gateway to a whole new chapter of your life, one where you're stepping into adulthood with all the grace, strength, and sparkle that have always defined you. I can already picture you blowing out those candles, surrounded by laughter, music, and the people who love you most.</p>
+
+<p>Even though we’ve only known each other since last school year, it honestly feels like you’ve already become such an important part of my life. From our random conversations and shared laughter to the moments when we supported each other through stress and challenges, every memory with you has been genuinely special to me. I’m so grateful for the friendship we built in such a short time. Watching you grow into such a confident, kind-hearted, and talented young woman has been inspiring, and I know this is only the beginning of even greater things for you. Turning 18 is such a beautiful milestone, and you deserve every bit of happiness that comes with it.</p>
+
+<p>I want you to know how deeply sorry I am that I can’t be there to celebrate with you. I really wanted to spend your special day by your side, but sadly I wasn’t allowed to come home in time for your birthday. It honestly hurts knowing I’ll miss the chance to hug you, celebrate with you, and be part of such an important moment in your life. Even so, I hope your day is filled with happiness, love, and unforgettable memories as you celebrate your 18th birthday. Know that my thoughts and heart are with you every single second, cheering louder than anyone in the room.</p>
+
+<p>On this special day, I wish for you all the magic the world has to offer: dreams that chase you as fiercely as you chase them, friendships that lift you higher, love that feels like home, and successes that make your heart burst with pride. May your 18th year be overflowing with adventures, travel to places that steal your breath, passions that set your soul on fire, and moments of pure, unfiltered happiness. You've got this, Ashley. The world is brighter because you're in it.</p>
+
+<p>Let’s make plans soon to celebrate properly, just you and me, with cake, stories, and all the time in the world. Until then, save me a slice and know that I’m sending you the biggest virtual hug imaginable. Forda Go Go! HBD ulit 💜✨</p>
+
+</div>
+
+<button onclick="restart()">Replay 💌</button>
+
+</div>
+
+<script>
+
+function show(id){
+document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+
+// start experience
+function start(){
+show('envelopeScreen');
+setTimeout(()=>music.play().catch(()=>{}),800);
+}
+
+// open letter
+function openLetter(){
+document.getElementById('envelope').classList.add('open');
+setTimeout(()=>show('letterScreen'),1000);
+}
+
+// restart
+function restart(){
+show('opening');
+document.getElementById('envelope').classList.remove('open');
+music.pause();
+music.currentTime = 0;
+}
+
+</script>
+
+</body>
+</html>
